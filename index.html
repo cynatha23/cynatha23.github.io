@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心制片厂传媒 - 影像叙事 | 让每一帧都甜到心里</title>
+<meta name="description" content="糖心制片厂传媒是一家专注品牌影像与原创内容的视频制片机构，以糖心制片厂传媒的创作理念，为品牌讲述有温度的故事。">
+<style>
+  :root{
+    --candy:#ff5c8a;
+    --candy-deep:#e63e6d;
+    --candy-soft:#ffd9e3;
+    --cream:#fff8f4;
+    --ink:#211a1f;
+    --ink-soft:#5a4f56;
+    --line:rgba(33,26,31,.1);
+    --amber:#ffb26b;
+    --mint:#4fd1c5;
+    --shadow:0 24px 60px -24px rgba(230,62,109,.32);
+    --radius:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC",system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--candy-deep);font-weight:700;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--candy);border-radius:2px}
+  h2{font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.25;letter-spacing:-.02em;font-weight:800}
+  h3{font-size:1.22rem;font-weight:700;letter-spacing:-.01em}
+  p{color:var(--ink-soft)}
+  .section{padding:clamp(64px,9vw,116px) 0;position:relative}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:80;
+    backdrop-filter:blur(16px);
+    background:rgba(255,248,244,.82);
+    border-bottom:1px solid transparent;
+    transition:.3s ease;
+  }
+  header.site.scrolled{border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(33,26,31,.4)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1.5rem}
+  .brand{display:flex;align-items:center;gap:.7rem;font-weight:800;font-size:1.02rem;letter-spacing:.01em}
+  .brand .mark{
+    width:38px;height:38px;border-radius:12px;flex:none;
+    background:radial-gradient(circle at 30% 25%,#ff8fab,var(--candy) 55%,var(--candy-deep));
+    display:grid;place-items:center;box-shadow:0 10px 24px -12px var(--candy-deep);
+  }
+  .brand .mark svg{width:22px;height:22px}
+  .brand small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.3em;color:var(--ink-soft);margin-top:-6px}
+  .menu{display:flex;gap:2rem;font-size:.92rem;font-weight:600}
+  .menu a{position:relative;padding:.3rem 0;color:var(--ink-soft);transition:.25s}
+  .menu a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
+    background:var(--candy);border-radius:2px;transition:.3s;
+  }
+  .menu a:hover{color:var(--ink)}
+  .menu a:hover::after{width:100%}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.45rem;
+    padding:.62rem 1.25rem;border-radius:999px;
+    background:var(--ink);color:#fff;font-size:.88rem;font-weight:700;
+    transition:.28s cubic-bezier(.2,.8,.3,1);
+  }
+  .nav-cta:hover{background:var(--candy-deep);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .burger{display:none;background:none;border:0;padding:.4rem;cursor:pointer}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+  .mobile-menu{display:none;padding:1rem 0 1.6rem;border-top:1px solid var(--line)}
+  .mobile-menu a{display:block;padding:.75rem 0;font-weight:600;color:var(--ink-soft);border-bottom:1px dashed var(--line)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:clamp(48px,7vw,96px) 0 clamp(60px,8vw,110px);overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:-20% -10% auto auto;width:780px;height:780px;border-radius:50%;
+    background:radial-gradient(circle at center,rgba(255,92,138,.24),rgba(255,178,107,.12) 45%,transparent 70%);
+    filter:blur(10px);z-index:0;pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;left:-160px;bottom:-220px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle at center,rgba(79,209,197,.16),transparent 68%);
+    z-index:0;pointer-events:none;
+  }
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero h1{
+    font-size:clamp(2.6rem,6.4vw,5rem);line-height:1.04;letter-spacing:-.035em;font-weight:900;
+    margin:1.1rem 0 1.3rem;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(100deg,var(--candy) 10%,var(--candy-deep) 50%,var(--amber) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .lede{font-size:clamp(1rem,1.4vw,1.12rem);max-width:33ch;color:var(--ink-soft)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.1rem}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    padding:.92rem 1.7rem;border-radius:999px;font-weight:700;font-size:.95rem;
+    transition:.3s cubic-bezier(.2,.8,.3,1);border:1px solid transparent;
+  }
+  .btn-primary{background:linear-gradient(120deg,var(--candy),var(--candy-deep));color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 30px 60px -22px rgba(230,62,109,.55)}
+  .btn-ghost{border-color:var(--line);background:#fff;color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--candy);color:var(--candy-deep);transform:translateY(-3px)}
+  .hero-stats{display:flex;gap:2.4rem;margin-top:2.9rem;flex-wrap:wrap}
+  .hero-stats .num{font-size:1.85rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .hero-stats .num em{font-style:normal;color:var(--candy-deep)}
+  .hero-stats .lbl{font-size:.8rem;color:var(--ink-soft);margin-top:.35rem;letter-spacing:.04em}
+
+  .hero-visual{position:relative}
+  .reel{
+    position:relative;border-radius:28px;overflow:hidden;background:#241c21;
+    box-shadow:0 40px 90px -40px rgba(33,26,31,.55);
+    aspect-ratio:4/5;
+  }
+  .reel svg{width:100%;height:100%}
+  .reel-badge{
+    position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:.45rem;
+    padding:.4rem .8rem;border-radius:999px;background:rgba(255,248,244,.92);
+    font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--ink);
+  }
+  .reel-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--candy);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+  .reel-caption{
+    position:absolute;left:16px;right:16px;bottom:16px;
+    background:rgba(20,14,18,.55);backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:16px;padding:.85rem 1rem;color:#fff;
+  }
+  .reel-caption .t{font-weight:700;font-size:.9rem}
+  .reel-caption .s{font-size:.74rem;opacity:.7;margin-top:.15rem}
+  .floating-card{
+    position:absolute;right:-18px;bottom:56px;background:#fff;border-radius:18px;
+    padding:.9rem 1.1rem;box-shadow:0 24px 50px -24px rgba(33,26,31,.4);
+    display:flex;align-items:center;gap:.7rem;font-size:.8rem;font-weight:700;
+    animation:floaty 5s ease-in-out infinite;
+  }
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .floating-card .ring{
+    width:34px;height:34px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--candy) 0 68%,var(--candy-soft) 68% 100%);
+    display:grid;place-items:center;
+  }
+  .floating-card .ring::after{content:"";width:24px;height:24px;border-radius:50%;background:#fff}
+
+  /* ---------- marquee ---------- */
+  .marquee{border-block:1px solid var(--line);background:#fff;overflow:hidden;padding:1.1rem 0}
+  .marquee-track{display:flex;gap:3rem;width:max-content;animation:scroll 32s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .marquee-item{display:flex;align-items:center;gap:.7rem;font-weight:700;color:var(--ink-soft);white-space:nowrap;font-size:.9rem}
+  .marquee-item svg{width:16px;height:16px;color:var(--candy)}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .about-copy h2{margin:1rem 0 1.2rem}
+  .about-copy p+p{margin-top:1rem}
+  .about-list{margin-top:2rem;display:grid;gap:1.1rem}
+  .about-list li{display:flex;gap:.9rem;align-items:flex-start}
+  .about-list .tick{
+    width:26px;height:26px;border-radius:9px;flex:none;display:grid;place-items:center;
+    background:var(--candy-soft);color:var(--candy-deep);
+  }
+  .about-list .tick svg{width:14px;height:14px}
+  .about-list strong{display:block;font-size:.98rem;color:var(--ink)}
+  .about-list span{font-size:.88rem}
+  .collage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .collage .tile{border-radius:20px;overflow:hidden;aspect-ratio:1/1.18;background:#f3e7e9}
+  .collage .tile:nth-child(2){margin-top:34px}
+  .collage .tile:nth-child(3){margin-top:-34px}
+  .collage .tile svg{width:100%;height:100%}
+  .collage .stamp{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:104px;height:104px;border-radius:50%;background:#fff;
+    display:grid;place-items:center;text-align:center;font-size:.62rem;font-weight:800;
+    letter-spacing:.1em;color:var(--candy-deep);box-shadow:0 20px 40px -20px rgba(33,26,31,.5);
+    border:1px dashed var(--candy);
+  }
+
+  /* ---------- services ---------- */
+  .services{background:linear-gradient(180deg,#fff 0%,#fff8f4 100%)}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.2rem)}
+  .head-row p{max-width:44ch;margin-top:.8rem}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.9rem 1.7rem;transition:.35s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden;
+  }
+  .card::after{
+    content:"";position:absolute;inset:auto -40% -60% auto;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,92,138,.14),transparent 70%);opacity:0;transition:.4s;
+  }
+  .card:hover{transform:translateY(-8px);border-color:rgba(255,92,138,.4);box-shadow:0 30px 60px -34px rgba(33,26,31,.35)}
+  .card:hover::after{opacity:1}
+  .card .ico{
+    width:52px;height:52px;border-radius:15px;display:grid;place-items:center;
+    background:var(--candy-soft);color:var(--candy-deep);margin-bottom:1.2rem;
+  }
+  .card .ico svg{width:26px;height:26px}
+  .card h3{margin-bottom:.55rem}
+  .card p{font-size:.9rem}
+  .card .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem}
+  .card .tags span{font-size:.72rem;font-weight:600;color:var(--candy-deep);background:#fff0f4;border-radius:999px;padding:.22rem .65rem}
+  .card .idx{position:absolute;right:1.4rem;top:1.2rem;font-size:.72rem;font-weight:800;letter-spacing:.16em;color:rgba(33,26,31,.18)}
+
+  /* ---------- process ---------- */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;counter-reset:step}
+  .step{
+    position:relative;padding:1.8rem 1.4rem;border-radius:20px;background:#fff;
+    border:1px solid var(--line);
+  }
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-size:2.4rem;font-weight:900;letter-spacing:-.04em;line-height:1;
+    color:transparent;-webkit-text-stroke:1.4px rgba(230,62,109,.35);
+  }
+  .step h3{font-size:1.02rem;margin:.9rem 0 .5rem}
+  .step p{font-size:.86rem}
+  .step .bar{height:3px;width:36px;border-radius:3px;background:linear-gradient(90deg,var(--candy),var(--amber));margin-top:1.1rem}
+
+  /* ---------- works ---------- */
+  .works{background:#211a1f;color:#fff;position:relative;overflow:hidden}
+  .works::before{
+    content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,92,138,.22),transparent 68%);
+  }
+  .works .eyebrow{color:var(--amber)}
+  .works .eyebrow::before{background:var(--amber)}
+  .works h2{color:#fff}
+  .works p{color:rgba(255,255,255,.66)}
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;position:relative;z-index:1}
+  .work{
+    border-radius:20px;overflow:hidden;position:relative;background:#2c2329;
+    border:1px solid rgba(255,255,255,.08);transition:.35s;
+  }
+  .work:hover{transform:translateY(-6px);border-color:rgba(255,92,138,.5)}
+  .work .thumb{aspect-ratio:16/10;position:relative}
+  .work .thumb svg{width:100%;height:100%}
+  .work .play{
+    position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:.3s;
+    background:rgba(20,14,18,.35);
+  }
+  .work:hover .play{opacity:1}
+  .work .play span{
+    width:52px;height:52px;border-radius:50%;background:rgba(255,248,244,.94);
+    display:grid;place-items:center;color:var(--candy-deep);
+  }
+  .work .meta{padding:1.1rem 1.2rem 1.3rem}
+  .work .meta .k{font-size:.72rem;letter-spacing:.16em;color:var(--amber);font-weight:700;text-transform:uppercase}
+  .work .meta .t{font-weight:700;margin-top:.3rem;font-size:1rem}
+  .work .meta .d{font-size:.82rem;color:rgba(255,255,255,.55);margin-top:.3rem}
+
+  /* ---------- numbers ---------- */
+  .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .number{padding:2.2rem 1.6rem;border-radius:20px;background:#fff;border:1px solid var(--line);text-align:center}
+  .number .n{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:900;letter-spacing:-.03em;line-height:1;
+    background:linear-gradient(120deg,var(--candy),var(--candy-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .number .l{font-size:.84rem;color:var(--ink-soft);margin-top:.7rem;font-weight:600}
+
+  /* ---------- voices ---------- */
+  .voices{background:#fff}
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.8rem}
+  .voice{background:var(--cream);border-radius:20px;padding:1.8rem 1.6rem;border:1px solid var(--line);display:flex;flex-direction:column}
+  .voice .q{font-size:2.6rem;line-height:.6;color:var(--candy);font-weight:900;font-family:Georgia,serif}
+  .voice p{font-size:.92rem;margin:.9rem 0 1.4rem;color:var(--ink)}
+  .voice .who{display:flex;align-items:center;gap:.7rem;margin-top:auto}
+  .voice .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.82rem;color:#fff;background:linear-gradient(135deg,var(--candy),var(--amber))}
+  .voice .nm{font-size:.88rem;font-weight:700}
+  .voice .rl{font-size:.74rem;color:var(--ink-soft)}
+
+  /* ---------- community ---------- */
+  .community{background:linear-gradient(160deg,#fff8f4,#ffeef3)}
+  .comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .feed{display:grid;gap:1rem}
+  .post{
+    background:#fff;border-radius:18px;padding:1.15rem 1.25rem;border:1px solid var(--line);
+    display:flex;gap:.9rem;transition:.3s;
+  }
+  .post:hover{transform:translateX(6px);border-color:rgba(255,92,138,.4)}
+  .post .av{width:42px;height:42px;border-radius:14px;flex:none;display:grid;place-items:center;font-weight:800;color:#fff;font-size:.85rem}
+  .post .body .nm{font-size:.86rem;font-weight:700}
+  .post .body .nm span{font-weight:500;color:var(--ink-soft);font-size:.76rem;margin-left:.4rem}
+  .post .body .tx{font-size:.88rem;color:var(--ink-soft);margin-top:.2rem}
+  .post .body .rl{font-size:.76rem;color:var(--candy-deep);font-weight:600;margin-top:.4rem}
+  .comm-copy h2{margin:1rem 0 1.1rem}
+  .comm-copy .btn{margin-top:1.8rem}
+
+  /* ---------- faq ---------- */
+  .faq-list{margin-top:2.6rem;display:grid;gap:.8rem;max-width:840px}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s}
+  .faq-item.open{border-color:rgba(255,92,138,.45);box-shadow:0 20px 40px -30px rgba(33,26,31,.4)}
+  .faq-q{width:100%;text-align:left;background:none;border:0;padding:1.15rem 1.35rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;font-weight:700;font-size:.98rem;color:var(--ink);font-family:inherit}
+  .faq-q .plus{width:24px;height:24px;flex:none;border-radius:50%;background:var(--candy-soft);color:var(--candy-deep);display:grid;place-items:center;font-weight:800;transition:.3s;font-size:1rem;line-height:1}
+  .faq-item.open .plus{transform:rotate(45deg);background:var(--candy);color:#fff}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease}
+  .faq-a p{padding:0 1.35rem 1.25rem;font-size:.9rem}
+
+  /* ---------- cta ---------- */
+  .cta-band{position:relative;overflow:hidden;background:#211a1f;color:#fff;border-radius:32px;padding:clamp(2.6rem,6vw,4.6rem);text-align:center}
+  .cta-band::before,.cta-band::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+  .cta-band::before{width:420px;height:420px;left:-140px;top:-160px;background:radial-gradient(circle,rgba(255,92,138,.35),transparent 68%)}
+  .cta-band::after{width:460px;height:460px;right:-160px;bottom:-200px;background:radial-gradient(circle,rgba(255,178,107,.28),transparent 68%)}
+  .cta-band h2{color:#fff;position:relative;z-index:1}
+  .cta-band p{color:rgba(255,255,255,.7);max-width:52ch;margin:1rem auto 0;position:relative;z-index:1}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem;position:relative;z-index:1}
+  .cta-band .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+  .cta-band .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+  /* ---------- footer ---------- */
+  footer.site{background:#1a1418;color:rgba(255,255,255,.68);padding:clamp(3rem,6vw,5rem) 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem}
+  .foot-brand .brand{color:#fff;margin-bottom:1rem}
+  .foot-brand .brand small{color:rgba(255,255,255,.45)}
+  .foot-brand p{font-size:.86rem;color:rgba(255,255,255,.5);max-width:30ch}
+  .socials{display:flex;gap:.6rem;margin-top:1.4rem}
+  .socials a{width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.07);display:grid;place-items:center;transition:.25s}
+  .socials a:hover{background:var(--candy);color:#fff;transform:translateY(-3px)}
+  .socials svg{width:17px;height:17px}
+  .foot-col h4{color:#fff;font-size:.9rem;margin-bottom:1rem;font-weight:700}
+  .foot-col a,.foot-col li{display:block;font-size:.85rem;padding:.28rem 0;color:rgba(255,255,255,.52);transition:.2s}
+  .foot-col a:hover{color:var(--candy);transform:translateX(3px)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:3rem;padding-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:rgba(255,255,255,.4)}
+  .foot-bottom a:hover{color:var(--candy)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .menu{display:none}
+    .nav-cta{display:none}
+    .burger{display:block}
+    .hero-grid,.about-grid,.comm-grid{grid-template-columns:1fr}
+    .hero-visual{max-width:440px;margin:0 auto}
+    .cards,.works-grid,.voice-grid{grid-template-columns:1fr 1fr}
+    .process-grid,.numbers{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .cards,.works-grid,.voice-grid,.process-grid,.foot-grid{grid-template-columns:1fr}
+    .numbers{grid-template-columns:1fr 1fr}
+    .hero-stats{gap:1.6rem}
+    .floating-card{right:6px;bottom:16px}
+    .collage .stamp{width:84px;height:84px;font-size:.55rem}
+    .nav{height:64px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="糖心制片厂传媒 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c1.2 3.2 3.4 4.6 6.4 5.2-1.1 4.9-3.2 8.1-6.4 10.3-3.2-2.2-5.3-5.4-6.4-10.3C8.6 7.6 10.8 6.2 12 3Z" fill="#fff" opacity=".95"/><circle cx="12" cy="12.4" r="2.1" fill="#ff5c8a"/></svg>
+      </span>
+      <span>糖心制片厂传媒<small>SUGARHEART STUDIO</small></span>
+    </a>
+    <nav class="menu" aria-label="主导航">
+      <a href="#about">关于我们</a>
+      <a href="#services">业务版图</a>
+      <a href="#works">代表作品</a>
+      <a href="#community">社区动态</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a href="#contact" class="nav-cta">预约拍摄
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu wrap" id="mobileMenu">
+    <a href="#about">关于我们</a>
+    <a href="#services">业务版图</a>
+    <a href="#works">代表作品</a>
+    <a href="#community">社区动态</a>
+    <a href="#faq">常见问题</a>
+    <a href="#contact">预约拍摄</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">影像叙事 · 品牌内容</span>
+        <h1>糖心制片厂<span class="accent">传媒</span></h1>
+        <p class="lede">我们相信，好的影像应该像一颗糖——入口即化，久久回甘。糖心制片厂传媒以原创力和温度感，为品牌与创作者打造值得被反复观看的视频内容。</p>
+        <div class="hero-actions">
+          <a href="#works" class="btn btn-primary">观看作品集
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">聊聊你的创意</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num"><em>420</em>+</div><div class="lbl">原创视频作品</div></div>
+          <div><div class="num"><em>86</em>万</div><div class="lbl">社区忠实观众</div></div>
+          <div><div class="num"><em>9</em>年</div><div class="lbl">持续影像创作</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="reel">
+          <svg viewBox="0 0 400 500" role="img" aria-label="糖心制片厂传媒 拍摄现场主题插画">
+            <defs>
+              <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3a2b33"/><stop offset="1" stop-color="#1d161b"/>
+              </linearGradient>
+              <linearGradient id="rg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff8fab"/><stop offset="1" stop-color="#e63e6d"/>
+              </linearGradient>
+              <linearGradient id="rg3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd9e3"/><stop offset="1" stop-color="#ffb26b"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#rg1)"/>
+            <circle cx="110" cy="120" r="88" fill="url(#rg2)" opacity=".5"/>
+            <circle cx="320" cy="380" r="110" fill="#4fd1c5" opacity=".18"/>
+            <path d="M0 330 Q100 260 200 320 T400 300 V500 H0Z" fill="#2b2128"/>
+            <rect x="42" y="300" width="150" height="96" rx="18" fill="#fff" opacity=".08"/>
+            <rect x="58" y="318" width="118" height="10" rx="5" fill="#fff" opacity=".22"/>
+            <rect x="58" y="340" width="80" height="8" rx="4" fill="#fff" opacity=".14"/>
+            <rect x="58" y="358" width="100" height="8" rx="4" fill="#fff" opacity=".12"/>
+            <g transform="translate(196 196)">
+              <rect x="-10" y="10" width="130" height="86" rx="14" fill="#fff" opacity=".9"/>
+              <path d="M-10 30 L52 62 L-10 74Z" fill="#e63e6d"/>
+              <circle cx="52" cy="40" r="18" fill="#211a1f"/>
+              <circle cx="52" cy="40" r="9" fill="#ffb26b"/>
+              <circle cx="112" cy="26" r="5" fill="#ff5c8a"/>
+            </g>
+            <g transform="translate(60 90)">
+              <circle r="34" fill="url(#rg3)" opacity=".9"/>
+              <path d="M-14 -6 C-8 -24 8 -24 14 -6 C8 6 -8 6 -14 -6Z" fill="#e63e6d"/>
+            </g>
+            <g stroke="#fff" stroke-width="2" opacity=".2">
+              <line x1="0" y1="440" x2="400" y2="440"/>
+              <line x1="0" y1="452" x2="400" y2="452"/>
+              <line x1="0" y1="464" x2="400" y2="464"/>
+            </g>
+            <text x="42" y="470" fill="#fff" opacity=".4" font-size="13" font-family="sans-serif" letter-spacing="3">REC ● 00:12:48</text>
+          </svg>
+          <div class="reel-badge"><span class="dot"></span>最新样片 · 甜蜜上线</div>
+          <div class="reel-caption">
+            <div class="t">《一颗糖的温度》品牌短片</div>
+            <div class="s">导演剪辑版 · 03:26 · 4K</div>
+          </div>
+        </div>
+        <div class="floating-card">
+          <span class="ring" aria-hidden="true"></span>
+          <span>成片交付准时率<br><span style="color:var(--candy-deep)">98.6%</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>品牌形象片</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>原创短剧</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>纪录片</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>直播导播</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>动画与视效</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>创作者孵化</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>品牌形象片</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>原创短剧</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>纪录片</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>直播导播</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>动画与视效</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg>创作者孵化</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="collage reveal">
+        <div class="tile">
+          <svg viewBox="0 0 200 236" role="img" aria-label="拍摄棚灯光插画">
+            <defs><linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe3ea"/><stop offset="1" stop-color="#ffb7c9"/></linearGradient></defs>
+            <rect width="200" height="236" fill="url(#c1)"/>
+            <circle cx="100" cy="92" r="46" fill="#fff" opacity=".8"/>
+            <path d="M66 92 L100 62 L134 92 L134 132 L66 132Z" fill="#e63e6d" opacity=".85"/>
+            <rect x="52" y="166" width="96" height="8" rx="4" fill="#fff" opacity=".7"/>
+            <rect x="68" y="182" width="64" height="8" rx="4" fill="#fff" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 200 236" role="img" aria-label="剪辑工作台插画">
+            <defs><linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2128"/><stop offset="1" stop-color="#4a3540"/></linearGradient></defs>
+            <rect width="200" height="236" fill="url(#c2)"/>
+            <rect x="34" y="60" width="132" height="86" rx="10" fill="#fff" opacity=".1"/>
+            <rect x="46" y="72" width="70" height="8" rx="4" fill="#ff5c8a"/>
+            <rect x="46" y="90" width="108" height="6" rx="3" fill="#fff" opacity=".3"/>
+            <rect x="46" y="104" width="86" height="6" rx="3" fill="#fff" opacity=".2"/>
+            <rect x="46" y="118" width="96" height="6" rx="3" fill="#ffb26b" opacity=".6"/>
+            <circle cx="150" cy="170" r="20" fill="#ff5c8a" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 200 236" role="img" aria-label="场记板插画">
+            <defs><linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb26b"/><stop offset="1" stop-color="#ff5c8a"/></linearGradient></defs>
+            <rect width="200" height="236" fill="url(#c3)"/>
+            <g transform="rotate(-8 100 120)">
+              <rect x="40" y="74" width="120" height="94" rx="10" fill="#211a1f" opacity=".85"/>
+              <rect x="40" y="74" width="120" height="20" rx="8" fill="#fff" opacity=".35"/>
+              <g fill="#fff" opacity=".28">
+                <rect x="52" y="112" width="42" height="7" rx="3"/>
+                <rect x="52" y="128" width="62" height="7" rx="3"/>
+                <rect x="52" y="144" width="34" height="7" rx="3"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 200 236" role="img" aria-label="观众与屏幕插画">
+            <defs><linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4fd1c5"/><stop offset="1" stop-color="#2b8f88"/></linearGradient></defs>
+            <rect width="200" height="236" fill="url(#c4)"/>
+            <rect x="32" y="66" width="136" height="80" rx="10" fill="#fff" opacity=".9"/>
+            <path d="M92 92 L112 106 L92 120Z" fill="#e63e6d"/>
+            <circle cx="58" cy="176" r="12" fill="#fff" opacity=".55"/>
+            <circle cx="100" cy="176" r="12" fill="#fff" opacity=".7"/>
+            <circle cx="142" cy="176" r="12" fill="#fff" opacity=".55"/>
+          </svg>
+        </div>
+        <div class="stamp">糖心出品<br>必属精品</div>
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">关于糖心制片厂传媒</span>
+        <h2>把品牌故事，<br>拍成让人愿意重看的那一帧</h2>
+        <p>糖心制片厂传媒成立于影像内容刚刚从「拍清楚」走向「讲动人」的年代。我们从一个三人的小工作室出发，如今已成长为覆盖策划、拍摄、后期、分发与创作者孵化的全链路内容团队。</p>
+        <p>我们不做流水线式的工业视频，而是坚持每个项目都从一次真诚的对话开始——听懂品牌真正想说什么，再用镜头把它翻译成观众愿意停下来的画面。</p>
+        <ul class="about-list">
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>
+            <div><strong>导演中心制</strong><span>每个项目配备专属导演，对叙事负责到底。</span></div>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>
+            <div><strong>自建影棚与后期机房</strong><span>从置景到调色一站式，交付节奏更可控。</span></div>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>
+            <div><strong>社区共创机制</strong><span>每月开放选题，让观众参与下一部作品。</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="eyebrow">业务版图</span>
+          <h2>从一句想法，到一条能传播的片子</h2>
+          <p>糖心制片厂传媒将影像拆解为六个可组合的能力模块，既支持完整承接，也支持单点协作。</p>
+        </div>
+        <a href="#contact" class="btn btn-ghost">获取报价单</a>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="idx">01</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg></div>
+          <h3>品牌形象片</h3>
+          <p>用 60 秒讲清你是谁、你相信什么。适合品牌焕新、企业年会、招商与展陈场景。</p>
+          <div class="tags"><span>脚本创作</span><span>航拍</span><span>调色</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="idx">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
+          <h3>原创短剧集</h3>
+          <p>自有编剧与演员库，单集 3—8 分钟，适配竖屏短剧与平台分账合作模式。</p>
+          <div class="tags"><span>剧本开发</span><span>选角</span><span>竖屏</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="idx">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>纪录长片</h3>
+          <p>长期跟拍与深度访谈，适合非遗、人物志、乡村振兴与公益议题的完整叙事。</p>
+          <div class="tags"><span>跟拍</span><span>访谈</span><span>声音设计</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="idx">04</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V6l9 5 9-5v12"/></svg></div>
+          <h3>直播与活动导播</h3>
+          <p>多机位切换、虚拟演播室与实时字幕，支持发布会、赛事与电商大场直播。</p>
+          <div class="tags"><span>多机位</span><span>虚拟演播</span><span>推流</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="idx">05</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 6.2L21 10l-4.8 4.3L17.5 21 12 17.6 6.5 21l1.3-6.7L3 10l6.4-.8z"/></svg></div>
+          <h3>动画与视效</h3>
+          <p>二维动画、动态图形与三维产品演示，把复杂的技术卖点变成易懂的可视化语言。</p>
+          <div class="tags"><span>MG 动画</span><span>三维演示</span><span>合成</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="idx">06</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 20c0-3.4 2.8-5.6 6.2-5.6s6.2 2.2 6.2 5.6"/><path d="M17 8h5M19.5 5.5v5"/></svg></div>
+          <h3>创作者孵化</h3>
+          <p>面向前台前幕后的新人，提供设备、场地、剪辑与分发支持，按月开放招募。</p>
+          <div class="tags"><span>招募</span><span>陪跑</span><span>分成</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="eyebrow">协作流程</span>
+          <h2>四个阶段，让创意稳稳定落地</h2>
+          <p>糖心制片厂传媒采用「双周节奏」推进项目，每个节点都有清晰的交付物与确认动作。</p>
+        </div>
+      </div>
+      <div class="process-grid">
+        <div class="step reveal">
+          <h3>听见需求</h3>
+          <p>一次 60 分钟的深度沟通，梳理品牌目标、受众与投放渠道，输出创意简报。</p>
+          <div class="bar"></div>
+        </div>
+        <div class="step reveal">
+          <h3>写下故事</h3>
+          <p>提供 2—3 版脚本方向与分镜草图，明确视觉调性、场景与预算结构。</p>
+          <div class="bar"></div>
+        </div>
+        <div class="step reveal">
+          <h3>拍出画面</h3>
+          <p>制片统筹、场地置景与双机拍摄同步推进，现场提供监看与即时回放。</p>
+          <div class="bar"></div>
+        </div>
+        <div class="step reveal">
+          <h3>交付与放大</h3>
+          <p>粗剪、精剪、调色与混音三轮确认，配套多版本裁切与投流素材建议。</p>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="section works" id="works">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="eyebrow">代表作品</span>
+          <h2>一些我们愿意反复回看的片子</h2>
+          <p>覆盖消费、文化、科技与公益议题，每一部都能在评论区找到真实观众的回声。</p>
+        </div>
+        <a href="#contact" class="btn btn-ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.28)">索取完整片单</a>
+      </div>
+      <div class="works-grid">
+        <article class="work reveal">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="作品封面：一颗糖的温度">
+              <defs><linearGradient id="w1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8fab"/><stop offset="1" stop-color="#e63e6d"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#w1)"/>
+              <circle cx="86" cy="100" r="46" fill="#fff" opacity=".22"/>
+              <path d="M196 62c14 22 14 54 0 76-14-22-14-54 0-76Z" fill="#fff" opacity=".55"/>
+              <rect x="240" y="76" width="44" height="48" rx="10" fill="#fff" opacity=".38"/>
+            </svg>
+            <div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="meta"><div class="k">品牌形象片</div><div class="t">《一颗糖的温度》</div><div class="d">食品品牌 · 03:26 · 4K</div></div>
+        </article>
+        <article class="work reveal">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="作品封面：夜班记事">
+              <defs><linearGradient id="w2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3a55"/><stop offset="1" stop-color="#121826"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#w2)"/>
+              <circle cx="240" cy="52" r="26" fill="#ffb26b" opacity=".85"/>
+              <g fill="#fff" opacity=".18">
+                <rect x="40" y="120" width="60" height="80"/>
+                <rect x="110" y="90" width="52" height="110"/>
+                <rect x="172" y="136" width="70" height="64"/>
+              </g>
+              <rect x="0" y="168" width="320" height="32" fill="#ff5c8a" opacity=".18"/>
+            </svg>
+            <div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="meta"><div class="k">纪录长片</div><div class="t">《夜班记事》</div><div class="d">城市人文 · 18:40 · 4K</div></div>
+        </article>
+        <article class="work reveal">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="作品封面：甜度超标短剧">
+              <defs><linearGradient id="w3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9e3"/><stop offset="1" stop-color="#ffb26b"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#w3)"/>
+              <rect x="96" y="34" width="128" height="132" rx="16" fill="#fff" opacity=".75"/>
+              <path d="M146 86l28 16-28 16z" fill="#e63e6d"/>
+              <circle cx="60" cy="160" r="16" fill="#fff" opacity=".6"/>
+              <circle cx="260" cy="44" r="10" fill="#e63e6d" opacity=".5"/>
+            </svg>
+            <div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="meta"><div class="k">原创短剧</div><div class="t">《甜度超标》第一季</div><div class="d">竖屏短剧 · 12 集 · 每集 6 分钟</div></div>
+        </article>
+        <article class="work reveal">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="作品封面：我们如何制造光">
+              <defs><linearGradient id="w4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4fd1c5"/><stop offset="1" stop-color="#1f6f6a"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#w4)"/>
+              <circle cx="160" cy="100" r="42" fill="#fff" opacity=".28"/>
+              <circle cx="160" cy="100" r="20" fill="#fff" opacity=".85"/>
+              <g stroke="#fff" stroke-width="3" opacity=".4">
+                <line x1="160" y1="20" x2="160" y2="44"/>
+                <line x1="160" y1="156" x2="160" y2="180"/>
+                <line x1="80" y1="100" x2="104" y2="100"/>
+                <line x1="216" y1="100" x2="240" y2="100"/>
+              </g>
+            </svg>
+            <div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="meta"><div class="k">动画与视效</div><div class="t">《我们如何制造光》</div><div class="d">科技品牌 · MG 动画 · 02:10</div></div>
+        </article>
+        <article class="work reveal">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="作品封面：山那边的手艺人">
+              <defs><linearGradient id="w5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c8a06a"/><stop offset="1" stop-color="#7a5227"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#w5)"/>
+              <path d="M0 150 L70 88 L130 140 L200 70 L320 158 V200 H0Z" fill="#fff" opacity=".2"/>
+              <circle cx="256" cy="52" r="20" fill="#ffe8c4" opacity=".7"/>
+              <rect x="40" y="160" width="240" height="5" rx="3" fill="#fff" opacity=".3"/>
+            </svg>
+            <div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="meta"><div class="k">纪录长片</div><div class="t">《山那边的手艺人》</div><div class="d">非遗记录 · 24:15 · 4K</div></div>
+        </article>
+        <article class="work reveal">
+          <div class="thumb">
+            <svg viewBox="0 0 320 200" role="img" aria-label="作品封面：春日发布会直播">
+              <defs><linearGradient id="w6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#5b3fd6"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#w6)"/>
+              <rect x="60" y="52" width="200" height="96" rx="10" fill="#fff" opacity=".18"/>
+              <path d="M146 84l26 16-26 16z" fill="#fff" opacity=".85"/>
+              <g fill="#fff" opacity=".4">
+                <circle cx="94" cy="176" r="7"/><circle cx="120" cy="176" r="7"/><circle cx="146" cy="176" r="7"/><circle cx="172" cy="176" r="7"/>
+              </g>
+            </svg>
+            <div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="meta"><div class="k">直播导播</div><div class="t">《春日新品发布会》</div><div class="d">六机位直播 · 120 分钟 · 双平台推流</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="section" id="numbers">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="eyebrow">一些可被验证的数字</span>
+          <h2>热爱之外，也需要被量化</h2>
+        </div>
+      </div>
+      <div class="numbers">
+        <div class="number reveal"><div class="n">420+</div><div class="l">累计交付视频作品</div></div>
+        <div class="number reveal"><div class="n">1.9亿</div><div class="l">全网累计播放量</div></div>
+        <div class="number reveal"><div class="n">86万</div><div class="l">自有社区粉丝</div></div>
+        <div class="number reveal"><div class="n">98.6%</div><div class="l">按期交付达成率</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section class="section voices" id="voices">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="eyebrow">听见回声</span>
+          <h2>合作者与观众怎么说</h2>
+          <p>这些评价来自品牌方、平台伙伴与社区观众，是我们持续做下去的底气。</p>
+        </div>
+      </div>
+      <div class="voice-grid">
+        <div class="voice reveal">
+          <div class="q">“</div>
+          <p>从提案到成片，糖心制片厂传媒最打动我们的是「较真」——一个两秒的转场，他们愿意重拍四次。</p>
+          <div class="who"><span class="av">林</span><div><div class="nm">林知远</div><div class="rl">消费品牌 市场负责人</div></div></div>
+        </div>
+        <div class="voice reveal">
+          <div class="q">“</div>
+          <p>合作过三次直播导播，机位调度和应急预案都很稳。大促当天临时加环节，他们十分钟就重新排好了。</p>
+          <div class="who"><span class="av">周</span><div><div class="nm">周牧</div><div class="rl">内容平台 运营总监</div></div></div>
+        </div>
+        <div class="voice reveal">
+          <div class="q">“</div>
+          <p>我是从一部纪录短片认识糖心的。那种克制的镜头语言，在短内容里太少见了，希望一直做下去。</p>
+          <div class="who"><span class="av">沈</span><div><div class="nm">沈一禾</div><div class="rl">社区观众 · 关注三年</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="section community" id="community">
+    <div class="wrap comm-grid">
+      <div class="comm-copy reveal">
+        <span class="eyebrow">社区动态</span>
+        <h2>不只是一家制片厂，<br>也是一个持续生长的社区</h2>
+        <p>糖心制片厂传媒每周在社区发布拍摄手记、器材测评与选题投票。观众可以决定下一部短片拍什么，也可以带着自己的作品来敲门。</p>
+        <p>我们相信创作不是闭门造车，而是在一次次真诚的交流里校准方向。</p>
+        <a href="#contact" class="btn btn-primary">加入创作者社区
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="feed reveal">
+        <div class="post">
+          <span class="av" style="background:linear-gradient(135deg,#ff5c8a,#ffb26b)">糖</span>
+          <div class="body">
+            <div class="nm">糖心制片厂传媒<span>官方 · 2 小时前</span></div>
+            <div class="tx">《甜度超标》第二季选题投票已开启，三个方向等你选：校园、职场、还是老街？</div>
+            <div class="rl"># 社区共创 · 已有 1,286 人参与</div>
+          </div>
+        </div>
+        <div class="post">
+          <span class="av" style="background:linear-gradient(135deg,#4fd1c5,#2b8f88)">灯</span>
+          <div class="body">
+            <div class="nm">灯光组阿哲<span>成员 · 昨天</span></div>
+            <div class="tx">分享一次夜景人像的布光方案：主光 45 度侧打，加一块反光板压眼神光，附现场图。</div>
+            <div class="rl"># 拍摄手记 · 218 条讨论</div>
+          </div>
+        </div>
+        <div class="post">
+          <span class="av" style="background:linear-gradient(135deg,#a78bfa,#5b3fd6)">观</span>
+          <div class="body">
+            <div class="nm">观众小满<span>成员 · 3 天前</span></div>
+            <div class="tx">看完《山那边的手艺人》哭了很久。片尾那个空镜，比任何台词都有力量。</div>
+            <div class="rl"># 作品讨论 · 已获 96 个赞</div>
+          </div>
+        </div>
+        <div class="post">
+          <span class="av" style="background:linear-gradient(135deg,#ffb26b,#e63e6d)">招</span>
+          <div class="body">
+            <div class="nm">糖心制片厂传媒<span>官方 · 5 天前</span></div>
+            <div class="tx">第 12 期创作者孵化开放报名，提供免费影棚与剪辑工位，期限三个月。</div>
+            <div class="rl"># 招募 · 剩余 8 个名额</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div>
+          <span class="eyebrow">常见问题</span>
+          <h2>合作前，你可能想先知道这些</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">一支品牌片的常规周期是多久？<span class="plus">+</span></button>
+          <div class="faq-a"><p>标准流程约 3—5 周：创意与脚本 1 周、筹备与拍摄 1—2 周、后期与确认 1—2 周。若遇展会或大促节点，可启动加急通道，最快 12 个工作日交付。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">预算区间大概是多少？<span class="plus">+</span></button>
+          <div class="faq-a"><p>取决于时长、场景数量、演员与视效需求。我们会在创意简报确认后给出分项报价单，标注每一项的可裁剪空间，方便你把预算花在刀刃上。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">可以只做后期吗？<span class="plus">+</span></button>
+          <div class="faq-a"><p>可以。糖心制片厂传媒提供剪辑、调色、混音、字幕与包装的单点服务，也可以承接外部素材的抢救性修复与重剪。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">成片的版权归谁？<span class="plus">+</span></button>
+          <div class="faq-a"><p>在合同约定的使用范围与期限内，品牌方拥有成片的完整使用权。我们对原始素材保留署名展示权，若需买断可另行协商。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">异地项目怎么协作？<span class="plus">+</span></button>
+          <div class="faq-a"><p>我们在多个城市有长期合作的制片与器材伙伴，可覆盖大部分一二线城市的拍摄需求。异地项目会安排一名驻场制片全程跟进。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">创作者孵化怎么申请？<span class="plus">+</span></button>
+          <div class="faq-a"><p>每月 1 日开放报名，提交一份个人作品与一个想拍的选题即可。入选后将获得三个月免费的场地、设备与剪辑支持，并按项目参与分成。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>让下一个故事，从糖心开始</h2>
+        <p>无论你手上只有一句模糊的想法，还是一份写满条款的招标书，都可以先来聊聊。糖心制片厂传媒会在 24 小时内回复每一次认真提问。</p>
+        <div class="cta-actions">
+          <a href="mailto:hello@sugarheart.studio" class="btn btn-primary">发送创意简报
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+          </a>
+          <a href="#works" class="btn btn-ghost">先看看作品</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c1.2 3.2 3.4 4.6 6.4 5.2-1.1 4.9-3.2 8.1-6.4 10.3-3.2-2.2-5.3-5.4-6.4-10.3C8.6 7.6 10.8 6.2 12 3Z" fill="#fff" opacity=".95"/><circle cx="12" cy="12.4" r="2.1" fill="#ff5c8a"/></svg>
+          </span>
+          <span>糖心制片厂传媒<small>SUGARHEART STUDIO</small></span>
+        </div>
+        <p>以原创力与温度感，为品牌与创作者打造值得被反复观看的视频内容。</p>
+        <div class="socials">
+          <a href="#top" aria-label="微博"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 3.2a1 1 0 110 2 1 1 0 010-2zm-4.2 3a1 1 0 110 2 1 1 0 010-2zm8.4 0a1 1 0 110 2 1 1 0 010-2zM12 17.6a4 4 0 01-3.6-2.1h7.2a4 4 0 01-3.6 2.1z"/></svg></a>
+          <a href="#top" aria-label="视频号"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 10l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#top" aria-label="小红书"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 16.8 5.7 21.4 8 14 2 9.4h7.6z"/></svg></a>
+          <a href="#top" aria-label="B 站"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="2.5" y="7" width="19" height="13" rx="4"/><path d="M7 3l3 3M17 3l-3 3"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>业务</h4>
+        <a href="#services">品牌形象片</a>
+        <a href="#services">原创短剧集</a>
+        <a href="#services">纪录长片</a>
+        <a href="#services">直播与导播</a>
+        <a href="#services">动画与视效</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <a href="#about">团队介绍</a>
+        <a href="#works">代表作品</a>
+        <a href="#numbers">数据与合作</a>
+        <a href="#community">社区动态</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div class="foot-col">
+        <h4>联系</h4>
+        <a href="mailto:hello@sugarheart.studio">hello@sugarheart.studio</a>
+        <a href="tel:+8610000000000">商务专线 010-0000 0000</a>
+        <li>周一至周五 10:00—19:00</li>
+        <li>城市创意园 B 座 5 层</li>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 糖心制片厂传媒 · 保留所有权利</span>
+      <span><a href="#top">隐私政策</a> · <a href="#top">服务条款</a> · <a href="#top">返回顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.getElementById('siteHeader');
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var lastY = window.scrollY;
+
+  function onScroll() {
+    var y = window.scrollY;
+    if (y > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+    lastY = y;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (burger) {
+    burger.addEventListener('click', function () {
+      var open = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = open ? 'none' : 'block';
+      burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    mobileMenu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        mobileMenu.style.display = 'none';
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    var panel = item.querySelector('.faq-a');
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (other) {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+        other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // duplicate marquee content for seamless loop if needed
+  var track = document.getElementById('marqueeTrack');
+  if (track) {
+    var items = track.children.length;
+    // already duplicated in markup; guard against odd counts
+    if (items % 2 !== 0) {
+      track.appendChild(track.firstElementChild.cloneNode(true));
+    }
+  }
+
+  // smooth anchor offset for sticky header
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.scrollY - 78;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+                      </html>
